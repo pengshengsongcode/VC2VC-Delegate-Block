@@ -41,8 +41,17 @@
      ****************************
      */
     
-    secondVC.delegate = self;
+//    给secondVC的delegate属性赋值
+//    secondVC.delegate = self;
 
+    
+//    实现block传值
+    secondVC.block = ^(NSString *string) {
+        
+        NSLog(@"%@",string);
+        
+    };
+    
     //可以不写
     
     secondVC.view.backgroundColor = [UIColor redColor];

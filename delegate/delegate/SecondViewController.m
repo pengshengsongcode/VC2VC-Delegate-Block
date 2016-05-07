@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     //判断delegate属性是否赋值成功，并且是否可以响应协议中的方法，如果能响应的话就调用协议中的方法
     
@@ -24,9 +27,9 @@
         [self.delegate SecondViewController:self andSendTitle:@"你好"];
     }
     
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.block) {
+        self.block(@"你好");
+    }
     
     [self dismissViewControllerAnimated:YES completion:nil];
     

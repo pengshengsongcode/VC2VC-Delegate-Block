@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+//将block重新命名
+
+typedef void(^MyBlock)(NSString *Title);
+
 @class SecondViewController;
 
 /**
@@ -24,5 +28,8 @@
 
 /** 声明代理属性*/
 @property (nonatomic, weak)id <SecondViewControllerDelegate> delegate;
+
+/** 声明block属性 */
+@property (nonatomic, copy)MyBlock block;
 
 @end
